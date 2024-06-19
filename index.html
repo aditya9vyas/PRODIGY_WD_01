@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo">ShopLogo</div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#products">Products</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+            <li class="nav-item"><a href="#" onclick="openPopup('loginPopup')">Login</a></li>
+            <li class="nav-item"><a href="#" onclick="openPopup('signupPopup')">Signup</a></li>
+            <li class="nav-item"><a href="#orders">Orders</a></li>
+            <li class="nav-item"><a href="#membership">Membership</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="home" class="home-section">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to Our Online Store</h1>
+                    <p>Find the best products at the best prices.</p>
+                    <p class="discount">Get up to 20% off on selected items!</p>
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <h1>Products</h1>
+            <div class="product-filters">
+                <input type="text" id="search" placeholder="Search products...">
+                <select id="category">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="office">Office Supplies</option>
+                </select>
+                <button onclick="applyFilters()">Apply Filters</button>
+            </div>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="images/computer-chair-small.jpg" alt="Computer Chair">
+                    <h2>Computer Chair</h2>
+                    <p>₹3,999 <span class="discount-price">₹3,199</span></p>
+                    <p class="description">Ergonomic computer chair with adjustable height and lumbar support.</p>
+                    <button onclick="openPopup('buyPopup', 'Computer Chair')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="images/samsung-monitor-small.jpg" alt="Samsung Monitor">
+                    <h2>Samsung Monitor</h2>
+                    <p>₹14,999 <span class="discount-price">₹12,999</span></p>
+                    <p class="description">27-inch Samsung monitor with full HD resolution and vibrant colors.</p>
+                    <button onclick="openPopup('buyPopup', 'Samsung Monitor')">Buy Now</button>
+                </div>
+                <div class="product">
+                    <img src="images/epson-printer-small.jpg" alt="Epson Printer L3110">
+                    <h2>Epson Printer L3110</h2>
+                    <p>₹11,499 <span class="discount-price">₹9,999</span></p>
+                    <p class="description">All-in-one ink tank printer with high yield and low running costs.</p>
+                    <button onclick="openPopup('buyPopup', 'Epson Printer L3110')">Buy Now</button>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h1>About Us</h1>
+            <p>We are dedicated to providing the best products at affordable prices. Our mission is to offer quality products and exceptional customer service. Whether you are looking for the latest electronics, comfortable furniture, or essential office supplies, we have everything you need to stay productive and connected.</p>
+            <p>Enjoy special discounts on selected items and hassle-free returns/replacements. Sign up for our membership to receive exclusive offers and track your past orders effortlessly.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, feel free to reach out to us at <a href="mailto:adityavyas8952@gmail.com">adityavyas8952@gmail.com</a>.</p>
+        </section>
+        <section id="orders">
+            <h1>Orders</h1>
+            <p>View your past orders and track their status.</p>
+            <ul>
+                <li>Order #12345 - Computer Chair - ₹3,999</li>
+                <li>Order #12346 - Samsung Monitor - ₹14,999</li>
+                <li>Order #12347 - Epson Printer L3110 - ₹11,499</li>
+            </ul>
+        </section>
+        <section id="membership">
+            <h1>Membership</h1>
+            <p>Sign up for our membership to enjoy exclusive benefits and offers.</p>
+            <form>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Popup Windows -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+            <h2>Signup</h2>
+            <form>
+                <label for="newUsername">Username:</label><br>
+                <input type="text" id="newUsername" name="newUsername"><br>
+                <label for="newPassword">Password:</label><br>
+                <input type="password" id="newPassword" name="newPassword"><br><br>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="buyPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('buyPopup')">&times;</span>
+            <h2>Buy Now</h2>
+            <p>Please fill in your payment and address details to complete the purchase.</p>
+            <form>
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" id="fullName" name="fullName"><br>
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address"></textarea><br>
+                <label for="paymentMethod">Payment Method:</label><br>
+                <select id="paymentMethod">
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="netBanking">Net Banking</option>
+                </select><br><br>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling when popup is open */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #333;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 1em;
+}
+
+.nav-item a {
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+/* Hover Effects */
+.nav-item a:hover {
+    color: yellow;
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+    background-color: #555;
+}
+
+/* Content Styles */
+.content {
+    margin-top: 80px; /* Adjusted for smaller navbar */
+    padding: 20px;
+}
+
+/* Home Section */
+.home-section {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text readability */
+    border-radius: 8px;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.discount {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Product Styles */
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.product h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product .discount-price {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.product button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #555;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Membership Section */
+#membership form {
+    display: flex;
+    flex-direction: column;
+}
+
+#membership form label {
+    margin-bottom: 5px;
+}
+
+#membership form input[type="email"], #membership form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#membership form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#membership form button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .popup-content {
+        width: 90%;
+        height: 80%;
+    }
+}
